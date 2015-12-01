@@ -1,0 +1,92 @@
+<div class="container" >
+    <br />
+
+    <div class="row">
+        <div class="center-form panel" style="width:500px;">
+            <form method="post" ng-submit="register()" name="registerForm">
+                <div class="panel-body">
+                    <h2 class="text-center">Event Registration</h2>
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.fname.$valid && registerForm.fname.$dirty, 'has-error' : registerForm.fname.$invalid && registerForm.fname.$dirty }">
+                        <input class="form-control input-lg" type="text" id="fname"
+                               name="fname" ng-model="fname" placeholder="First Name" required
+                               autofocus>
+
+                        <div class="help-block text-danger" ng-if="registerForm.email.$dirty"
+                             ng-messages="registerForm.email.$error">
+                            <div ng-message="required">Your first name is required.</div>
+                            <div ng-message="email">Your first name is invalid.</div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.lname.$valid && registerForm.lname.$dirty, 'has-error' : registerForm.lname.$invalid && registerForm.lname.$dirty }">
+                        <input class="form-control input-lg" type="text" id="lname"
+                               name="lname" ng-model="lname" placeholder="Last Name" required
+                               autofocus>
+
+                        <div class="help-block text-danger" ng-if="registerForm.email.$dirty"
+                             ng-messages="registerForm.email.$error">
+                            <div ng-message="required">Your last name is required.</div>
+                            <div ng-message="email">Your last name is invalid.</div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.organization.$valid && registerForm.organization.$dirty, 'has-error' : registerForm.organization.$invalid && registerForm.organization.$dirty }">
+                        <input class="form-control input-lg" type="text" id="organization"
+                               name="organization" ng-model="organization" placeholder="Organization" required
+                               autofocus>
+
+                        <div class="help-block text-danger" ng-if="registerForm.email.$dirty"
+                             ng-messages="registerForm.email.$error">
+                            <div ng-message="required">Your organization is required.</div>
+                            <div ng-message="email">Your organization is invalid.</div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.email.$valid && registerForm.email.$dirty, 'has-error' : registerForm.email.$invalid && registerForm.email.$dirty }">
+                        <input class="form-control input-lg" type="email" id="email"
+                               name="email" ng-model="email" placeholder="Email" required
+                               autofocus>
+
+                        <div class="help-block text-danger" ng-if="registerForm.email.$dirty"
+                             ng-messages="registerForm.email.$error">
+                            <div ng-message="required">Your email address is required.</div>
+                            <div ng-message="email">Your email address is invalid.</div>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.password.$valid && registerForm.password.$dirty, 'has-error' : registerForm.password.$invalid && registerForm.password.$dirty }">
+                        <input class="form-control input-lg" type="password" name="password"
+                               ng-model="password" placeholder="Password" required>
+
+                        <div class="help-block text-danger"
+                             ng-if="registerForm.password.$dirty"
+                             ng-messages="registerForm.password.$error">
+                            <div ng-message="required">Password is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group"
+                         ng-class="{ 'has-success' : registerForm.confirmPassword.$valid && registerForm.confirmPassword.$dirty, 'has-error' : registerForm.confirmPassword.$invalid && registerForm.confirmPassword.$dirty }">
+                        <input class="form-control input-lg" type="password"
+                               name="confirmPassword" ng-model="confirmPassword"
+                               repeat-password="password" placeholder="Confirm Password"
+                               required>
+
+                        <div class="help-block text-danger my-special-animation"
+                             ng-if="registerForm.confirmPassword.$dirty"
+                             ng-messages="registerForm.confirmPassword.$error">
+                            <div ng-message="required">You must confirm password.</div>
+                            <div ng-message="repeat">Passwords do not match.</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" ng-disabled="registerForm.$invalid"
+                            class="btn btn-lg btn-block btn-primary">
+                        Create Account
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
